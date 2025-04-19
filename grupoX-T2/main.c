@@ -9,7 +9,22 @@ int main(int argc, char *argv[]) {
 
     char* archivo_de_entrada = argv[1];
     char* archivo_de_salida = argv[3];  
-    
+
+
+    ///Verificar si funciona o no la funcion
+    const char* ciudad1 = "viña";
+ const char* ciudad2 = "Valpo";
+
+ char resultado = comparar_alfabeto_ciudades(ciudad1, ciudad2);
+
+ if(resultado <0){
+   printf("%s, %s\n",ciudad1, ciudad2);
+ }else{
+   printf("%s, %s\n",ciudad2, ciudad1);
+ }
+ ///FIN de la verificacion
+
+
     //chequeo de arg
     if (argc != 4) {
         printf("Uso: %s <input> <N> <output>\n", argv[0]);
@@ -32,6 +47,7 @@ int main(int argc, char *argv[]) {
 //Leer info del csv
  CityData* ciudades = leer_info(archivo_de_entrada);
  free(ciudades);
+
 
  return 0;
 }
