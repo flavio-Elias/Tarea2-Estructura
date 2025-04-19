@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "modules/processor.h"
+#include "modules/sorter.h"
+#include "modules/validator.h"
+
 typedef struct {
  char city_name[50];
  int seismic_level;
@@ -13,5 +17,7 @@ int main(int argc, char *argv[]) {
  return 1;
  }
  // Implementación pendiente
+
+
  return 0;
 }
