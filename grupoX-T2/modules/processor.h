@@ -1,3 +1,5 @@
+#ifndef processor_h
+#define processor_h
 
 
 #include <stdio.h>
@@ -8,5 +10,6 @@ typedef struct {
     float risk_percent;
    } CityData;
 
+CityData* leer_info(const char* nombre_del_archivo);
 
-
+#endif

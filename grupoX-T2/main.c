@@ -23,6 +23,8 @@ int main(int argc, char *argv[]) {
 
  // Implementación pendiente
 
+ CityData* ciudades = leer_info(archivo_de_entrada);
+ free(ciudades);
 
  return 0;
 }
