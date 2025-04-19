@@ -1,1 +1,16 @@
 #include "validator.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+///Cagaste numero 1
+int validar_csv(const char *archivo_de_entrada){
+  FILE *OwO = fopen(archivo_de_entrada, "r");
+  if (OwO == NULL){
+    fclose(OwO);
+    return 0;
+  }else{
+    fclose(OwO);
+    return 1;
+  }
+}

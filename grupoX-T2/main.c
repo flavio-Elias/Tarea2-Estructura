@@ -22,7 +22,14 @@ int main(int argc, char *argv[]) {
 
 
  // Implementación pendiente
+	//Validaciones:
+    	//validar si se abrio el csv bien
+	if(validar_csv(archivo_de_entrada)==0){
+          printf("cooperaste con el archivo csv (lo ingresaste mal)");
+          return 1;
+	}
 
+//Leer info del csv
  CityData* ciudades = leer_info(archivo_de_entrada);
  free(ciudades);
 

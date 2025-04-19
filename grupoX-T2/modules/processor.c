@@ -4,8 +4,8 @@
 #include <stdio.h>
 
 ///Puntero a una instancia de la estrucutra de CityData
-CityData* leer_info(const char* nombre_del_archivo) {
-    FILE* archivo = fopen(nombre_del_archivo, "r");
+CityData* leer_info(const char* archivo_de_entrada) {
+    FILE* archivo = fopen(archivo_de_entrada, "r");
 
     char linea[256];
     int i = 4;

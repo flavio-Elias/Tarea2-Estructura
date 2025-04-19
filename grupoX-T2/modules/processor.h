@@ -10,6 +10,6 @@ typedef struct {
     float risk_percent;
    } CityData;
 
-CityData* leer_info(const char* nombre_del_archivo);
+CityData* leer_info(const char* archivo_de_entrada);
 
 #endif
