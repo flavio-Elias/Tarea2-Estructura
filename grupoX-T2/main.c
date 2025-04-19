@@ -5,21 +5,22 @@
 #include "modules/sorter.h"
 #include "modules/validator.h"
 
-typedef struct {
- char city_name[50];
- int seismic_level;
- float risk_percent;
-} CityData;
-
 int main(int argc, char *argv[]) {   
 
-char* archivo_de_entrada = argv[1];
-char* archivo_de_salida = argv[3];  
+    char* archivo_de_entrada = argv[1];
+    char* archivo_de_salida = argv[3];  
+    
+    //chequeo de arg
+    if (argc != 4) {
+        printf("Uso: %s <input> <N> <output>\n", argv[0]);
+        return 1;
+        }
 
- if (argc != 4) {
- printf("Uso: %s <input> <N> <output>\n", argv[0]);
- return 1;
- }
+    FILE* entrada = fopen(archivo_de_entrada, "r");
+
+    FILE* salida = fopen(archivo_de_salida, "w");
+
+
  // Implementación pendiente
 
 
