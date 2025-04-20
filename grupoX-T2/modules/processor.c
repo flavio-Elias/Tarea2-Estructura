@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 ///Puntero a una instancia de la estrucutra de CityData
-CityData* leer_info(const char* archivo_de_entrada) {
+CityData* leer_info(const char* archivo_de_entrada, int* contador2) {
     FILE* archivo = fopen(archivo_de_entrada, "r");
 
     char linea[256];
@@ -42,5 +42,6 @@ CityData* leer_info(const char* archivo_de_entrada) {
         contador++;
     }
     fclose(archivo);
+	*contador2 = contador;
     return cities;
 }
