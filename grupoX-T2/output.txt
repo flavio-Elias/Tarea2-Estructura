@@ -1,0 +1,16 @@
+City Name,Seismic Level,Risk Percent
+San Antonio,5,
+Concepcion,5,90.00
+Puerto Montt,4,30.00
+San Fernando,3,97.50
+Angol,3,73.60
+Talca,3,49.30
+Rancagua,3,
+Punta Arenas,2,79.00
+Linares,1,84.30
+Melipilla,1,66.00
+Calama,1,39.50
+Punta Arenas,1,33.60
+Viña del Mar,1,
+Coyhaique,1,
+,0,

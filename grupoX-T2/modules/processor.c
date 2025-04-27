@@ -1,7 +1,10 @@
-#include "processor.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+#include "processor.h"
+#include "validator.h"
+
 
 ///Puntero a una instancia de la estrucutra de CityData
 CityData* leer_info(const char* archivo_de_entrada, int* contador2) {
@@ -11,8 +14,9 @@ CityData* leer_info(const char* archivo_de_entrada, int* contador2) {
     int i = 4;
     int contador = 0;
 
-
+    //ESPACIO de m
     CityData* cities = malloc(i*sizeof(CityData));
+    
 
     fgets(linea, sizeof(linea), archivo);
 
@@ -49,8 +53,10 @@ CityData* leer_info(const char* archivo_de_entrada, int* contador2) {
 
         contador++;
     }
-
+    
     fclose(archivo);
 	*contador2 = contador;
+    validar_todas_las_ciudades(cities, contador);
+    
     return cities;
 }

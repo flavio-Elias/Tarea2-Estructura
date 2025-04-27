@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "stdlib.h": "c",
-        "sorter.h": "c"
+        "sorter.h": "c",
+        "validator.h": "c",
+        "processor.h": "c"
     }
 }

@@ -6,34 +6,27 @@
 #include "modules/validator.h"
 
 int main(int argc, char *argv[]) {   
-    // chequeo de argumentos primero
-    if (argc != 4) {
-        printf("Uso: %s <input> <N> <output>\n", argv[0]);
-        return 1;
-    }
+
+    validar_csv(argv[1], &argc); 
 
     char* archivo_de_entrada = argv[1];
     char* archivo_de_salida = argv[3];
     int Numero_solicitado = atoi(argv[2]);
 
+   
+
+
     // Leer info del CSV
     int total_ciudades = 0;
     CityData* ciudades = leer_info(archivo_de_entrada, &total_ciudades);
-    if (!ciudades) {
-        printf("Error leyendo las ciudades.\n");
-        return 1;
-    }
-
-    //verificador de un numero solicitado valido (mayor a 0)
-    if (Numero_solicitado < 0) {
-      printf("error en el numero de ciudades a categorizar");
-      return 1;
-    }
+   
+    //verificador de un numero solicitado valido (mayor a 0)y ciudades 
+    validarn(&Numero_solicitado, ciudades);
 
     // Ordenar las ciudades
     qsort(ciudades, total_ciudades, sizeof(CityData), comparar_ciudades);
 
-    // Abrir archivo de salida
+    // Crear/Abrir archivo de salida
     FILE* salida = fopen(archivo_de_salida, "w");
     if (!salida) {
         perror("Error al abrir el archivo de salida");
