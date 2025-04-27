@@ -23,24 +23,33 @@ CityData* leer_info(const char* archivo_de_entrada, int* contador2) {
             cities = temp;
         }
 
-        ///Nombre de la ciudad
-        char* separador = strtok(linea, ",");
-        strncpy(cities[contador].city_name,separador,sizeof(cities[contador].city_name));
-        cities[contador].city_name[sizeof(cities[contador].city_name)-1] = '\0';
+        //leemos el nombre de la ciudad
+        char* token = strtok(linea, ",");
 
-        printf("%s\n", cities[contador].city_name);
+        strncpy(cities[contador].city_name, token, sizeof(cities[contador].city_name));
+        cities[contador].city_name[sizeof(cities[contador].city_name) - 1] = '\0';
 
-        /// Nivel
-        separador = strtok(NULL, ",");
-        cities[contador].seismic_level = atoi(separador);
+        //leemos el nivel sismico
+        token = strtok(NULL, ",");
 
-        ///riesgo
-        separador = strtok(NULL, ",\n");
-        cities[contador].risk_percent = atof(separador);
+        cities[contador].seismic_level = atoi(token);
 
+        //leemos el porcentaje de riesgo
+        token = strtok(NULL, ",\n");
+
+        //como las intrucciones dicen que solo este item puede estar faltante, añadimos la
+        //verificacion de si el token de corte no esta o si el largo del str de riesgo es 0,
+        //en caso de que sea el caso (valga la redunancia) asignamos el riesgo como 0, asumo
+        //que no hay ciudades con riesgo 0% (no sucede en la realidd)
+        if (token == NULL || strlen(token) == 0) {
+            cities[contador].risk_percent = 0;
+        } else {
+            cities[contador].risk_percent = atof(token);
+        }
 
         contador++;
     }
+
     fclose(archivo);
 	*contador2 = contador;
     return cities;
